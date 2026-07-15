@@ -38,6 +38,33 @@ class Uygulamam extends StatelessWidget {
                 'https://media.istockphoto.com/id/1340209535/tr/foto%C4%9Fraf/g%C3%B6kp%C4%B1nar-lake-g%C3%BCr%C3%BCn-sivas.jpg?s=170667a&w=0&k=20&c=4_xKRhqW8Etjc4_NhpO_6-r1AUkSkciAzSNNQDcua7U=',
                 width: 100,
               ),
+              SizedBox(height: 50),
+              ElevatedButton(
+                onPressed: () {},
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.deepOrange,
+                ),
+                child: Text(
+                  "buttonnnn",
+                  style: TextStyle(color: Colors.deepPurpleAccent),
+                ),
+              ),
+              SizedBox(height: 50),
+
+              IconButton(
+                onPressed: () {},
+                style: IconButton.styleFrom(backgroundColor: Colors.green),
+                icon: Icon(
+                  Icons.account_box_sharp,
+                  color: Colors.blue,
+                  size: 60,
+                ),
+              ),
+              Icon(
+                Icons.account_box_sharp,
+                color: const Color.fromARGB(96, 134, 9, 9),
+                size: 67,
+              ),
             ],
           ),
         ),
