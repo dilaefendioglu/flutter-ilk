@@ -11,59 +11,58 @@ class Uygulamam extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        backgroundColor: const Color.fromARGB(255, 220, 219, 215),
         appBar: AppBar(
-          title: Text("uygulamam"),
-          backgroundColor: Colors.pinkAccent.shade100,
+          title: Text(
+            "Instagram",
+            style: TextStyle(color: const Color.fromARGB(255, 248, 249, 249)),
+          ),
+          backgroundColor: Colors.pinkAccent,
           centerTitle: true,
         ),
         body: Center(
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text("merhaba"),
-                  SizedBox(width: 30),
-                  Image.asset(
-                    'assets/images/search.png',
-                    width: 60,
-                    height: 60,
+              Container(
+                margin: EdgeInsets.only(top: 90), //sadece üstten boşluk
+                padding: EdgeInsets.symmetric(horizontal: 40, vertical: 25),
+                decoration: BoxDecoration(
+                  color: const Color.fromARGB(255, 247, 244, 244),
+                  borderRadius: BorderRadius.circular(20),
+                  border: Border.all(
+                    color: const Color.fromARGB(255, 237, 223, 228),
+                    width: 3,
                   ),
-                ],
-              ),
-              SizedBox(height: 100),
-              Image.network(
-                'https://media.istockphoto.com/id/1340209535/tr/foto%C4%9Fraf/g%C3%B6kp%C4%B1nar-lake-g%C3%BCr%C3%BCn-sivas.jpg?s=170667a&w=0&k=20&c=4_xKRhqW8Etjc4_NhpO_6-r1AUkSkciAzSNNQDcua7U=',
-                width: 100,
-              ),
-              SizedBox(height: 50),
-              ElevatedButton(
-                onPressed: () {},
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.deepOrange,
+                  boxShadow: [
+                    BoxShadow(
+                      color: const Color.fromARGB(255, 230, 138, 196),
+                      blurRadius: 6,
+                      offset: Offset(0, 3),
+                    ),
+                  ],
                 ),
-                child: Text(
-                  "buttonnnn",
-                  style: TextStyle(color: Colors.deepPurpleAccent),
-                ),
-              ),
-              SizedBox(height: 50),
 
-              IconButton(
-                onPressed: () {},
-                style: IconButton.styleFrom(backgroundColor: Colors.green),
-                icon: Icon(
-                  Icons.account_box_sharp,
-                  color: Colors.blue,
-                  size: 60,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text("LOGIN"),
+                    SizedBox(height: 15),
+                    Icon(Icons.person, size: 50),
+                    SizedBox(height: 100),
+
+                    ElevatedButton(
+                      onPressed: () {},
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.lightBlueAccent,
+                      ),
+                      child: Text(
+                        "Giriş yap",
+                        style: TextStyle(
+                          color: const Color.fromARGB(255, 249, 251, 250),
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
-              ),
-              Icon(
-                Icons.account_box_sharp,
-                color: const Color.fromARGB(96, 134, 9, 9),
-                size: 67,
               ),
             ],
           ),
