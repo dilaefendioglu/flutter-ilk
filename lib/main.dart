@@ -64,6 +64,8 @@ class Uygulamam extends StatelessWidget {
                   ],
                 ),
               ),
+
+              Card(child: Text("hello")),
             ],
           ),
         ),
