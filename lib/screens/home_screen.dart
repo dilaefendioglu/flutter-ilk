@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/models/elemanlar_model.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -8,23 +9,10 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  List elemanlar = [
-    "a",
-    "b",
-    "c",
-    "d",
-    "a",
-    "b",
-    "c",
-    "d",
-    "a",
-    "b",
-    "c",
-    "d",
-    "a",
-    "b",
-    "c",
-    "d",
+  List<ElemanlarModel> elemanlar = [
+    ElemanlarModel("baslik 1", "alt baslik1"),
+    ElemanlarModel("baslik 2", "alt baslik2"),
+    ElemanlarModel("baslik 3", "alt baslik3"),
   ];
 
   @override
@@ -33,8 +21,8 @@ class _HomeScreenState extends State<HomeScreen> {
       body: ListView.separated(
         itemCount: elemanlar.length,
         itemBuilder: (context, index) => ListTile(
-          title: Text("$index. eleman:"),
-          subtitle: Text(elemanlar[index]),
+          title: Text(elemanlar[index].title),
+          subtitle: Text(elemanlar[index].subtitle),
           tileColor: Color.fromARGB(255, 199, 215, 228),
           onTap: () => debugPrint("elemanlar:$index"),
         ),
