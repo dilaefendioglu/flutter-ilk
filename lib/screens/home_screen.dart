@@ -1,50 +1,44 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/custom_card.dart';
-import 'package:flutter_application_1/screens/second_screen.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
+
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  List elemanlar = [
+    "a",
+    "b",
+    "c",
+    "d",
+    "a",
+    "b",
+    "c",
+    "d",
+    "a",
+    "b",
+    "c",
+    "d",
+    "a",
+    "b",
+    "c",
+    "d",
+  ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          "Instagram",
-          style: TextStyle(color: const Color.fromARGB(255, 248, 249, 249)),
+      body: ListView.separated(
+        itemCount: elemanlar.length,
+        itemBuilder: (context, index) => ListTile(
+          title: Text("$index. eleman:"),
+          subtitle: Text(elemanlar[index]),
+          tileColor: Color.fromARGB(255, 199, 215, 228),
+          onTap: () => debugPrint("elemanlar:$index"),
         ),
-        backgroundColor: Colors.pinkAccent,
-        centerTitle: true,
-      ),
-      body: Center(
-        child: Column(
-          children: [
-            CustomCardView(),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => SecondScreen()),
-                );
-              },
-              child: Text("ikinci sayfaya geç"),
-            ),
-            SizedBox(height: 50),
-            SizedBox(
-              height: 80,
-              width: 200,
-
-              child: Card(
-                color: Colors.amber,
-                elevation: 20,
-                child: Align(
-                  alignment: Alignment.bottomLeft,
-                  child: Text("merhaba"),
-                ),
-              ),
-            ),
-          ],
-        ),
+        separatorBuilder: (context, index) => const Divider(),
       ),
     );
   }
